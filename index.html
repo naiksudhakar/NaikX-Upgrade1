@@ -6,40 +6,72 @@
   <title>NaikX Innovations | Strategy. Leadership. Innovation.</title>
   <style>
     body {
-      margin: 0;
+       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f8fb;
-      color: #2c3e50;
+      background: linear-gradient(135deg, #1e3c72, #9b59b6);
+      color: white;
     }
     header {
-      background: linear-gradient(#73ecd4, #1abc9c, #101D6B);
-      color: white;
-      padding: 1.0rem;
+       background-color: white;
+      color: #101D6B;
+      padding: 1rem;
       text-align: left;
     }
-    header h1 {
+   header h1 {
       font-size: 2.0rem;
       margin: 0;
+      color: #101D6B;
     }
-    header p {
+    header p, header a {
       font-size: 1.2rem;
       margin: 0.5rem 0 0;
+      color: #101D6B;
+    }
+    header h3 {
+      color: #101D6B;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.3rem;
+      text-align: right;
     }
     nav {
+      background-color: #101D6B;
+      overflow: hidden;
+    }
+    .nav-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      background-color: #101D6B;
-      padding: 0.5rem 1rem;
     }
-    nav a {
+    .nav-links a {
       color: white;
       text-decoration: none;
       margin: 0.5rem 1rem;
       font-weight: bold;
     }
-    nav a:hover {
+    .nav-links a:hover {
       text-decoration: underline;
+    }
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      padding: 1rem;
+      color: white;
+      font-size: 1.5rem;
+      background-color: #101D6B;
+      text-align: right;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
     }
     section {
       max-width: 960px;
@@ -47,39 +79,22 @@
       padding: 2rem 1rem;
     }
     h2 {
-      color: #101D6B;
+      color: white;
       margin-bottom: 1rem;
     }
-  h3 {
-      color: White;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.3rem;
-text-align: right;
-    }
-e {
-      color: White;
-      padding-bottom: 0.3rem;
-text-align: right;
-    }
     .card {
-      background: white;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
       padding: 1.5rem;
       margin-bottom: 2rem;
     }
     .highlight-section {
-      background-color: #eaf6ff;
+      background-color: rgba(255, 255, 255, 0.15);
       border-left: 6px solid #101D6B;
     }
     ul li {
       margin: 0.6rem 0;
-    }
-    .contact {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
     .contact input, .contact textarea {
       width: 100%;
@@ -108,23 +123,6 @@ text-align: right;
       padding: 1rem;
       font-size: 0.9rem;
     }
-    .sticky-cta {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: #203a43;
-      color: white;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 0.5rem;
-      z-index: 999;
-    }
-    .sticky-cta a {
-      color: #00ffd5;
-      text-decoration: none;
-      font-weight: bold;
-    }
     .skills span, .tools span {
       display: inline-block;
       background: #ecf0f1;
@@ -135,26 +133,35 @@ text-align: right;
       font-size: 0.9rem;
     }
   </style>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('active');
+    }
+  </script>
 </head>
 <body>
   <header>
-  <h1> <img src="LogoBanner.png" alt="Avatar" width="300px" height="80px>  "&nbsp;" NaikX Innovations</h1>
+    <h1><img src="LogoBanner.png" alt="NaikX Logo" width="300" height="80"> NaikX Innovations</h1>
     <p>Leading with Strategy. Innovating with Purpose.</p>
-<p> Write to us at <a href="mailto:innovate@naikx.com">innovate@naikx.com</a> </p>
- <h3>Business Excellence | Leadership Development | Product Strategy | Agile Transformation</h3>
+    <p>Write to us at <a href="mailto:innovate@naikx.com">innovate@naikx.com</a></p>
+    <h3>Business Excellence | Leadership Development | Product Strategy | Agile Transformation</h3>
+  </header>
 
-</header>
- 
+  <div class="hamburger" onclick="toggleMenu()">☰ Menu</div>
   <nav>
-    <a href="#who">Who We Are</a>
-    <a href="#what">What We Do</a>
-    <a href="#why">Why NaikX</a>
-    <a href="#accomplishments">Accomplishments</a>
-    <a href="#expertise">Expertise</a>
-    <a href="#credentials">Credentials</a>
-    <a href="#clients">Clients</a>
-    <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav-links">
+      <a href="#who">Who We Are</a>
+      <a href="#what">What We Do</a>
+      <a href="#why">Why NaikX</a>
+      <a href="#accomplishments">Accomplishments</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
 
   <section id="who" class="card highlight-section">
     <h2>🌟 Who We Are</h2>
